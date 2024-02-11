@@ -1,0 +1,8 @@
+baseURL = 'https://garugaru.io/'
+languageCode = 'en-us'
+title = 'GaruGaru Blog'
+theme = 'hugo-bearcub'
+
+[params.author]
+name = "Tommaso Garuglieri"
+email = "garuglieritommaso@gmail.com"
