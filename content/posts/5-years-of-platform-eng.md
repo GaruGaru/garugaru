@@ -73,17 +73,17 @@ This allowed us to effortlessly manage, deploy, and even perform rollbacks on va
 
 At {{company name}}, data was a core asset, thus, from the very beginning, we designed and implemented a data lake that acted as a source of truth, enabling data analysis, ETL, and API use cases.
 
-Given the complexity of creating a data lake from scratch, we decided to use AWS Redshift, a managed data warehouse platform that allowed us to perform standard SQL queries while providing high-performance ingestion using AWS Firehose.
+Given the complexity of creating a data lake from scratch, we decided to use {{aws columnar storage service}}, a managed data warehouse platform that allowed us to perform standard SQL queries while providing high-performance ingestion using {{aws ingestion service}}.
 
 Once the use cases became numerous and the workloads too heavy, having both data and storage coupled together started to show its limitations, and scalability issues became clear.
 
 We needed to scale for both analytical and interactive workloads (e.g., APIs vs. data scientist large analysis). The high-level design choice was to decouple the data storage from the compute.
 
-To achieve this separation, we used AWS S3 as block storage along with Apache Iceberg as the table format, the interoperability of Apache Iceberg enabled many integrations and use cases.
+To achieve this separation, we used AWS S3 as block storage along with {{bigdata open table format}}, the interoperability of {{bigdata open table format}} enabled many integrations and use cases.
 
-Later, we introduced Apache Spark and Apache Flink for ETL and streaming workloads, integrated Trino for the read-heavy use cases such as APIs.
+Later, we introduced {{batch oriented distributed compute engine}} and {{streaming oriented distributed compute engine}} for ETL and streaming workloads, integrated {{fast distributed query engine}} for the read-heavy use cases such as APIs.
 
-Being able to connect multiple applications and frameworks to the same data storage was a game-changer. We were not limited by a single data storage, and we also introduced many tools and integrations transparently and without overloading the single point of failure / bottleneck that was redshift.
+Being able to connect multiple applications and frameworks to the same data storage was a game-changer. We were not limited by a single data storage, and we also introduced many tools and integrations transparently and without overloading the single point of failure / bottleneck that was {{aws columnar storage service}}.
 
 ## Non IaC native tools ❌
 
