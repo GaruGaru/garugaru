@@ -129,3 +129,17 @@ Java remained the language of choice for large, public-facing APIs due to its ma
 To accommodate the creation of new projects and ensure that every new repository adhered to best practices in terms of project structure, security, observability, and scalability, we automated the repository creation process. We provided developers with a set of predefined templates (e.g., java-api, go-worker, go-api, etc.).
 
 By leveraging [Backstage](https://backstage.io/), developers were able to create, scaffold, and deploy (on multiple environments) a new project automatically, without having to configure anything or write all the needed boilerplate just to have a running service.
+
+
+## Chaos engeneering ✅
+
+At some point in time, I stumbled upon the interesting [chaos engineering principles in the Netflix Tech Blog](https://netflixtechblog.com/tagged/chaos-engineering). 
+
+While creating outages in a live production system may sound scary or even counterintuitive, it really helped us gain confidence in the existing infrastructure and uncover some nasty issues.
+For example, we discovered that our Spring Boot-based services started responding with 5XX errors or even failed to start in the case of a Redis node failure.
+
+Of course, the blast radius and the timing were carefully controlled. It only ran at specific times and days, allowing us to intervene in case of serious outages. In hindsight, those outages would have happened anyway, probably at a much worse time, like outside working hours.
+
+For this purpose we adopted the simplest solution available at the time which was [chaos kube](https://github.com/linki/chaoskube) along with other such as [powerful seal](https://github.com/powerfulseal/powerfulseal), but as today I'd probably go with a more robust solution like [Chaos Mesh](https://chaos-mesh.org/) or [Limitus Chaos](https://litmuschaos.io/).
+
+
