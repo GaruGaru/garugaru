@@ -143,3 +143,15 @@ Of course, the blast radius and the timing were carefully controlled. It only ra
 For this purpose we adopted the simplest solution available at the time which was [chaos kube](https://github.com/linki/chaoskube) along with other such as [powerful seal](https://github.com/powerfulseal/powerfulseal), but as today I'd probably go with a more robust solution like [Chaos Mesh](https://chaos-mesh.org/) or [Limitus Chaos](https://litmuschaos.io/).
 
 
+## No integration tests ❔
+
+At {{company name}}, we never invested in writing integration tests. Instead, we focused on having plenty of unit tests and maintaining a high code coverage across all our services.
+
+Very often, we used [Test Containers](https://testcontainers.com/) libraries to integrate services using containers in our tests. This allowed us to test integrations with external services without having to mock everything (thus testing nothing :D).
+
+The choice of not having integration tests was due to the complexity and scale of the overall system. I still don't have a strong opinion about this choice; integration tests are useful and can really help when dealing with multiple services and their interactions.
+
+Like all things, integration tests must be developed and maintained. Due to their nature, integration tests can get pretty hacky and flaky, especially when coordinating multiple components from the ingestion systems to the APIs.
+
+A flaky and slow test is not something developers want to run and trust. Thus, it is not a useful test, and these kinds of tests tend to be ignored or directly removed since they are a waste of time and do not fit well into fast developer iterations.
+
