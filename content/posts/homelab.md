@@ -33,8 +33,9 @@ Given those principles the hardware I'm currently using is:
 
 ## Rack 
 
-Online we can find many pre-built racks coming in all sizes and shapes, as thinkerers we are never 100% happy about something which comes with all the bells and whistels,so of course here the solution was to build the rack my self.
+![Rack](rack-0.jpg) 
 
+Online we can find many pre-built racks coming in all sizes and shapes, as thinkerers we are never 100% happy about something which comes with all the bells and whistels,so of course here the solution was to build the rack my self.
 
 I've started drawing my own 3d rack trying to fit everything in the smallest space possible, it took a while and more wasted filament that I'd like to admit but in the end it turned out pretty nice.
 
@@ -43,12 +44,11 @@ I'm a happy owner of a BambooLab A1 Mini, which is a great printer but it comes 
 
 I've realized the simplest yet modular design that I was able to ( I'm not a 3d designer please forgive me ), where the basic idea was to have different **stackable** layers: each layer is composed by the stackable columns with supports to screw in masks so that it could either expose IO ports, fans or other mounts easly.
 
-
-![Rack](rack-0.jpg)
+![Rack](rack-1.png)
 
 ## Power consumption and thermals.
 
-The entire setup consumes about steady ~20:
+The entire setup consumes about steady ~20W:
 * 12W from the 3 RPIs
 * 8W from the NAS running 3 ssd disks.
 
@@ -56,5 +56,16 @@ When in full load the power consumption can go up to 30-40W~ but this never happ
 
 The RPIs are cooled using a single 80mm fan from Noctua and they are able to maintain a temperature of ~40-50°, the NAS is able to run completely fanless, I've already created a fan mount just in case for the future.
 
+## Software
 
+### Provisioning
 
+### Kubernetes 
+
+#### Gitops 
+
+#### ISCSI PVs 
+
+### NAS 
+
+### Home assistant / zigbee 
