@@ -29,6 +29,7 @@ Given those principles the hardware I'm currently using is:
 * 2x Raspberry PI 5 - 8 GB memory
 * 1x Raspberry PI 3 - 1 Gb memory 
 * 1x Mini itx - intel N100 - 8GB memory - x3 512Gb ssd 
+* 1 TP Link TL-SF1005D
 
 ## Rack 
 
@@ -40,9 +41,20 @@ I've started drawing my own 3d rack trying to fit everything in the smallest spa
 
 I'm a happy owner of a BambooLab A1 Mini, which is a great printer but it comes with a small build plate being able to print 18x18x18cm, this posed another challenge since I had to draw everything to be as modular as possible since I wasn't phisically able to print entire parts.
 
+I've realized the simplest yet modular design that I was able to ( I'm not a 3d designer please forgive me ), where the basic idea was to have different **stackable** layers: each layer is composed by the stackable columns with supports to screw in masks so that it could either expose IO ports, fans or other mounts easly.
 
-I've realized the simplest yet modular design that I was able to ( I'm not a 3d designer please forgive me ), where the basic idea was to have different **stackable** layers, and each layer with supports to screw in masks so that it could either expose IO ports, fans or other mounts easly.
+
+![Rack](rack-0.jpg)
+
+## Power consumption and thermals.
+
+The entire setup consumes about steady ~20:
+* 12W from the 3 RPIs
+* 8W from the NAS running 3 ssd disks.
+
+When in full load the power consumption can go up to 30-40W~ but this never happens in real world usage, so far I'm happy about the power consumption.
+
+The RPIs are cooled using a single 80mm fan from Noctua and they are able to maintain a temperature of ~40-50°, the NAS is able to run completely fanless, I've already created a fan mount just in case for the future.
 
 
-![Title of image](rack-0.jpg)
 
