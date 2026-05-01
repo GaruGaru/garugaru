@@ -6,3 +6,7 @@ theme = 'hugo-bearcub'
 [params.author]
 name = "Tommaso Garuglieri"
 email = "garuglieritommaso@gmail.com"
+
+[caches]
+  [caches.images]
+    dir = ':cacheDir/images'
