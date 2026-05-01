@@ -15,11 +15,11 @@ As the sole (happy) user and maintainer, I’m writing this blog post to describ
 
 # Hardware 
 
-Let's start from the physical world, the main drivers behind my hardware choices were the following: 
+The main drivers behind my hardware choices were the following: 
 
 * **Ease of replacement**: No fancy enterprise-level or obscure hardware, everything has to be standard and easily replaceable in case of failures.
 * **Power consumption**: Since it runs in my home, I wanted low power usage, which also translates to lower temperatures and less noise.
-* **Form factor**: I wanted everything to fit in a small, portable setup that doesn’t take up an entire room. Small is beautiful!
+* **Form factor**: I wanted everything to fit in a small, portable setup that doesn’t take up an entire room.
 
 Given those principles, the hardware I'm currently using is:
 
