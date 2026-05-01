@@ -1,10 +1,10 @@
 +++
 author = "GaruGaru"
 title = "How I run my homelab"
-date = "2026-04-20"
+date = "2026-05-01"
 description = "Software and hardware fun building my homelab"
 tags = [
-"self-hosting",
+    "self-hosting",
     "infrastructure",
 ]
 +++
@@ -32,7 +32,7 @@ Given those principles, the hardware I'm currently using is:
 
 ![Rack](rack-0.jpg) 
 
-Online you can find many pre-built racks in all shapes and sizes, but as tinkerers we’re never 100% satisfied with something that comes with all the bells and whistles. So of course, I've decided to built my own.
+Online you can find many pre-built racks in all shapes and sizes, but as tinkerers we’re never 100% satisfied with something that comes with all the bells and whistles. So of course, I've decided to build my own.
 
 I started by designing a 3D rack to fit everything in the smallest space possible while keeping a modular design.
 It took a while (and more wasted filament than I’d like to admit) but in the end, it turned out pretty nice.
@@ -68,7 +68,7 @@ In the end, since I just install the same common packages with very minimal conf
 
 ### Kubernetes
 
-I chose to run Kubernetes (using k3s), even though it goes against the goal of simplicity. The main reasons for this decision were my existing experience with running Kubernetes clusters, as well as the wide range of tooling and deployment options available for the software I wanted to use, also see [kubernetes is not just for black friday](https://ergaster.org/posts/2025/07/09-kubernetes-black-friday]
+I chose to run Kubernetes (using k3s), even though it goes against the goal of simplicity. The main reasons for this decision were my existing experience with running Kubernetes clusters, as well as the wide range of tooling and deployment options available for the software I wanted to use, also see [kubernetes is not just for black friday](https://ergaster.org/posts/2025/07/09-kubernetes-black-friday)
 
 I’m running a two-node cluster: 1 master and 1 worker, both on RPIs. The master node uses an NVMe disk because Kubernetes state store tends to generate high disk I/O which already killed a few SD cards during the first year.
 
@@ -98,7 +98,7 @@ The final solution was to use my ZFS NAS as storage provider: exposing ISCSI vol
 
 This way, I can store and persist data using high-performance, redundant NAS disks while keeping volume management simple by integrating directly with the Kubernetes APIs.
 
-Using iSCSI disks instead of NFS not only provides better performance, but is also a safeer way to run PostgreSQL, SQLite, and other systems that expect block-level I/O rather than file-level access.
+Using iSCSI disks instead of NFS not only provides better performance, but is also a safer way to run PostgreSQL, SQLite, and other systems that expect block-level I/O rather than file-level access.
 
 
 ### NAS
@@ -136,7 +136,7 @@ Here's a brief list of what I'm running in my homelab:
 
 * Adguard: DNS level ad blocker for all devices in my LAN.
 
-* surf condition bot: Telegram bot which detect good surf conditions and send me short webcam videos from surfs sport nearby me.
+* surf condition bot: Telegram bot which detect good surf conditions and send me short webcam videos from surf spots nearby me.
 
 * cert-manager / external dns: automatically generates ssl certficates and updates DNS records when exposing new services.
 
@@ -145,14 +145,21 @@ Here's a brief list of what I'm running in my homelab:
 
 The lone RPI 3 is running home assistant installed directly as OS, using a zigbee dongle it is able to control zigbee devices in my home which are mainly smart switches / light bulbs. 
 
-I decided to go for zigbee as I didn't want to rely on thrid-party apis or proprietary solutions to control my home devices. Zigbee offers a standard protocol supported by many vendors which doesn't require internet or LAN connection to work. 
+I decided to go for zigbee as I didn't want to rely on third-party APIs or proprietary solutions to control my home devices. Zigbee offers a standard protocol supported by many vendors which doesn't require internet or LAN connection to work. 
 
 #### Valetudo
 
 ![Roomba](roomba-0.png) 
 
-I've also modified my smart vacuum cleaner, which apparently is running Tina Linux installing [valetudo](https://valetudo.cloud/) on it, Valetudo is a nice software which allows you to disconnect your smart vacuum from the internet while keeping the original navigation capabilities. 
+I've also modified my smart vacuum cleaner, which apparently runs Tina Linux, by installing [valetudo](https://valetudo.cloud/) on it.
+Valetudo is a nice software which allows you to disconnect your smart vacuum from the internet while keeping the original navigation capabilities. 
 Using the MQTT plugin I'm able to control the vacuum cleaner directly from home assistant automations which is pretty handy. 
+
+### Future ideas
+
+* Since I'm using FluxCD only to apply kustomize/helm resource I may be able to use a simpler gitops solution.
+* Experiment with immutable OS on all nodes.
+* I'm building my own small metrics database as prometheus is too resource heavy for my small setup.
 
 ## Conclusions 
 
