@@ -1,4 +1,4 @@
-baseURL = 'https://blog.garu.io'
+baseURL = 'https://blog.garu.me'
 languageCode = 'en-us'
 title = 'GaruGaru Blog'
 theme = 'hugo-bearcub'
